@@ -26,14 +26,14 @@ steps:
 
 - task: Xcode@5
   inputs:
-    actions: build
+    actions: 'build'
+    configuration: '$(configuration)'
     sdk: '$(sdk)'
     scheme: '$(scheme)'
-    configuration: '$(configuration)'
-    xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     packageApp: true
-
+    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    signingOption: 'auto'
+    teamId: 'kagmanish8@gmail.com'
 - task: CopyFiles@2
   inputs:
     contents: '**/*.ipa'
