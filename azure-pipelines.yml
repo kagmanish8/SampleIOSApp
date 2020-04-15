@@ -24,7 +24,6 @@ steps:
 #  inputs:
 #    provProfileSecureFile: '6ffac825-ed27-47d0-8134-95fcf37a666c.mobileprovision'
 
-steps:
 - task: Xcode@5
   inputs:
     actions: build
