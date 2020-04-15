@@ -32,7 +32,6 @@ steps:
     scheme: '$(scheme)'
     packageApp: true
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
-    signingOption: 'auto'
     teamId: 'kagmanish8@gmail.com'
 - task: CopyFiles@2
   inputs:
