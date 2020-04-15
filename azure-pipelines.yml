@@ -11,11 +11,14 @@ variables:
   sdk: 'iphoneos'
   configuration: 'Release'
 
+
+
+steps:
+
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'cert.p12'
-
-steps:
+    
 - task: InstallAppleCertificate@2
   inputs:
     certSecureFile: '$(Agent.TempDirectory)\cert.p12'
