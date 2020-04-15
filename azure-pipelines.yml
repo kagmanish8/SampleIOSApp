@@ -4,12 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
 pool:
-  vmImage: 'macOS 10.13'
+  vmImage: 'macos-latest'
 
 steps:
 - task: Xcode@5
   inputs:
-    scheme: ''
-    sdk: 'iphoneos'
+    actions: 'build'
     configuration: 'Release'
-    xcodeVersion: 'default' # Options: 8, 9, default, specifyPath
+    sdk: 'iphoneos'
+    packageApp: false
