@@ -14,14 +14,14 @@ variables:
 
 
 steps:
-#- task: InstallAppleCertificate@2
-#  inputs:
-#    certSecureFile: cert.p12
-#    certPwd: 'test'
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: cert.p12
+    certPwd: 'test'
     
-#- task: InstallAppleProvisioningProfile@1
-#  inputs:
-#    provProfileSecureFile: '6ffac825-ed27-47d0-8134-95fcf37a666c.mobileprovision'
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provProfileSecureFile: 'Sober_Development_Profile-2.mobileprovision'
 
 - task: Xcode@5
   inputs:
