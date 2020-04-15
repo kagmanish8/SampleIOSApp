@@ -23,14 +23,25 @@ steps:
   inputs:
     provProfileSecureFile: 'Sober_Development_Profile-2.mobileprovision'
 
+#- task: Xcode@5
+#  inputs:
+#    actions: 'build'
+#    configuration: '$(configuration)'
+#    sdk: '$(sdk)'
+#    scheme: '$(scheme)'
+#   packageApp: false
+#    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
 - task: Xcode@5
   inputs:
     actions: 'build'
     configuration: '$(configuration)'
     sdk: '$(sdk)'
     scheme: '$(scheme)'
-    packageApp: false
+    packageApp: true
+    archivePath: '$(build.artifactStagingDirectory)'
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    exportOptions: 'plist'
+    exportOptionsPlist: '$(build.artifactStagingDirectory)'
 - task: CopyFiles@2
   inputs:
     contents: '**/*.ipa'
