@@ -29,7 +29,7 @@ steps:
     configuration: '$(configuration)'
     sdk: '$(sdk)'
     scheme: '$(scheme)'
-    packageApp: true
+    packageApp: false
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
 - task: CopyFiles@2
   inputs:
