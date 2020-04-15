@@ -15,13 +15,9 @@ variables:
 
 steps:
 
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'cert.p12'
-    
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: '$(Agent.TempDirectory)\cert.p12'
+    certSecureFile: cert.p12
     certPwd: 'test'
 
 #- task: InstallAppleProvisioningProfile@1
