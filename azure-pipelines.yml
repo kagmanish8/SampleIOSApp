@@ -30,12 +30,13 @@ steps:
     scheme: '$(scheme)'
     configuration: '$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    exportPath: '$(build.artifactStagingDirectory)/output/$(sdk)/$(configuration)'
     packageApp: false
 
 
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.app'
-    targetFolder: '$(build.artifactStagingDirectory)'
+#- task: CopyFiles@2
+#  inputs:
+#    contents: '**/*.app'
+#    targetFolder: '$(build.artifactStagingDirectory)'
+
 - task: PublishBuildArtifacts@1
