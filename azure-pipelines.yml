@@ -29,17 +29,17 @@ steps:
     configuration: '$(configuration)'
     sdk: '$(sdk)'
     scheme: '$(scheme)'
-    packageApp: false
-    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
-
+    packageApp: true
+    archivePath: '$(build.artifactStagingDirectory)'
+    exportPath: 'output/$(sdk)/$(configuration)'
+    exportOptions: 'specify'
+    exportMethod: 'development'
+    exportTeamId: '2R2S7RM348'
+    useXcpretty: true
+    publishJUnitResults: true
 - task: CopyFiles@2
   inputs:
     contents: '**/*.ipa'
-    targetFolder: '$(build.artifactStagingDirectory)'
-
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.app'
     targetFolder: '$(build.artifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
